@@ -1,0 +1,106 @@
+                     ###INHERITANCE#######"""#creating base class
+class Person(object):
+	
+	def __init__(self, name):
+		self.name=name
+	def getName(self):
+		return self.name
+	def isEmploy(self):
+		return False
+#creating sub class
+class Employ(Person):
+	def isEmploy(self):
+		return True
+emp=Person("farhad")
+print(emp.getName(),emp.isEmploy())
+emp=Employ("ahamed")
+print(emp.getName(),emp.isEmploy()"""
+#------------------------------------------------------------------------------------
+#Access parent member in parent class using parent class name
+"""class Base(object):
+		def __init__(self, x):
+		self.x=x
+class Derived(Base):
+				def __init__(self, x,y):
+					Base.x=x
+					self.y=y
+				def printval(self):
+					print(Base.x,self.y)
+d=Derived(10,20)
+d.printval()"""						
+#===================================================================================
+#Access parent member in parent class using super()
+class Base(object):
+	"""docstring for Base"""
+	def __init__(self, x):
+		self.x=x
+class Derived(Base):
+	"""docstring for Derived"""
+	def __init__(self, x,y):
+		super(Derived, self).__init__(x)
+		self.y = y
+	def printval(self):
+		print(self.x,self.y)	
+		
+d=Derived(10,20)
+d.printval()	
+#POLYMORPHISM
+class India():
+    def capital(self):
+        print("New Delhi")
+    def language(self):
+        print("Hindi")
+    def type(self):
+        print("India is a developing country")
+class USA():
+    def capital(self):
+        print("Washington D.C")
+    def language(self):
+        print("English")
+    def type(self):
+        print("USA is a developed country")
+obj_ind=India()
+obj_usa=USA()
+"""for con in (obj_ind,obj_usa):
+   con.capital()
+   con.language()
+   con.type() """      
+#other way
+def func(obj):
+    obj.capital()
+    obj.language()
+    obj.type()
+func(obj_ind)
+func(obj_usa)    
+#METHOD OVERRIDDEN
+class Bird:
+class Bird:
+    def intro(self):
+        print("There are many types of birds")
+    def flight(self):
+        print("Most of the can fly but some  can not fly")
+class Sparrow(Bird):
+    def fligth(self):
+        print("Sparrow can fly")
+class Ostrich(Bird):
+    def fligth(self):
+        print("Ostrich can not fly")
+obj_bird=Bird()
+obj_spr=Sparrow()
+obj_ost=Ostrich()
+obj_bird.intro()
+obj_bird.flight()
+obj_spr.intro()
+obj_spr.flight()
+obj_ost.intro()
+obj_ost.flight()        
+
+								
+		
+										
+
+
+
+		
+		
+                     
